@@ -1,0 +1,13 @@
+cff-version: 1.2.0
+message: "If you use this code or these results, please cite them as below."
+title: "Code and results for: Conformal answer sets and explanation fidelity for fuzzy concept-cognitive learning"
+authors:
+  - family-names: Thathappagaari
+    given-names: Uma Maherswari
+    affiliation: "School of Advanced Sciences, Vellore Institute of Technology"
+  - family-names: S
+    given-names: Kaspar
+    affiliation: "School of Advanced Sciences, Vellore Institute of Technology"
+license: MIT
+repository-code: "https://github.com/mahibgm9676-lab/conformal-fuzzy-ccl"
+# doi: 10.5281/zenodo.XXXXXXX   (add after publishing on Zenodo)

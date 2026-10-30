@@ -1,4 +1,4 @@
-"""Step 1: download the public UCI datasets and save them as csv files in data/.
+"""Step 1: download the nine public UCI datasets and save them as csv files in data/.
 
 Run:  python 01_prepare_data.py
 The class column is always the LAST column (ccl_helpers.load() relies on this).
@@ -37,6 +37,19 @@ cls = [c for c in w.columns if c.strip().lower() == "class"][0]
 w = w[[c for c in w.columns if c != cls] + [cls]]   # class goes last
 w.to_csv(DATA_DIR / "wilt.csv", index=False)
 print("wilt", w.shape)
+
+# Shuttle, Yeast and Ecoli: numeric attributes only; classes with fewer than 8 cases are dropped
+# (the paper counts the datasets after this step).
+for name, i in {"shuttle": 148, "yeast": 110, "ecoli": 39}.items():
+    d = fetch_ucirepo(id=i)
+    Xf = d.data.features.select_dtypes("number")
+    yt = d.data.targets.iloc[:, 0].astype(str)
+    out = pd.concat([Xf, yt.rename("class")], axis=1)
+    cnt = out["class"].value_counts()
+    drop = cnt[cnt < 8].index.tolist()
+    out = out[~out["class"].isin(drop)]
+    out.to_csv(DATA_DIR / f"{name}.csv", index=False)
+    print(name, out.shape, "dropped:", drop, "| class sizes:", out["class"].value_counts().tolist())
 
 # Shill Bidding: download "Shill Bidding Dataset.csv" from
 # https://doi.org/10.24432/C5Z611 and save it as data/Shill Bidding Dataset.csv.

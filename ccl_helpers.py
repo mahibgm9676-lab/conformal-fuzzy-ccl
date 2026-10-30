@@ -11,7 +11,7 @@ from sklearn.metrics import balanced_accuracy_score, roc_auc_score
 import os
 from pathlib import Path
 
-# Folder that holds the six csv files (see 01_prepare_data.py). Change it with the
+# Folder that holds the nine csv files (see 01_prepare_data.py). Change it with the
 # environment variable CCL_DATA_DIR, or leave it as "data" next to these scripts.
 DATA_DIR = Path(os.environ.get("CCL_DATA_DIR", "data"))
 RESULTS_DIR = Path(os.environ.get("CCL_RESULTS_DIR", "results"))
@@ -21,7 +21,10 @@ FILES = {"shill": str(DATA_DIR / "Shill Bidding Dataset.csv"),
          "htru2": str(DATA_DIR / "htru2.csv"),
          "magic": str(DATA_DIR / "magic.csv"),
          "pageblocks": str(DATA_DIR / "pageblocks.csv"),
-         "drybean": str(DATA_DIR / "drybean.csv")}
+         "drybean": str(DATA_DIR / "drybean.csv"),
+         "shuttle": str(DATA_DIR / "shuttle.csv"),
+         "yeast": str(DATA_DIR / "yeast.csv"),
+         "ecoli": str(DATA_DIR / "ecoli.csv")}
 
 METRIC_COLS = ["coverage", "min_class_cov", "answered", "acc_on_answered", "avg_size", "empty"]
 CP_COLS = ["dataset", "seed", "alpha", "score", "variant"] + METRIC_COLS
