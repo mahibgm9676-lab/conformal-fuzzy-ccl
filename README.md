@@ -5,7 +5,7 @@ fuzzy concept-cognitive learning" (Uma Maherswari Thathappagaari and Kaspar S), 
 Scientific Reports. Every number in the tables and figures of the paper comes from the csv files
 in `results/`.
 
-Archived version: Zenodo DOI **10.5281/zenodo.XXXXXXX** (replace after publishing).
+Archived version: Zenodo DOI **10.5281/zenodo.23791950** 
 
 ## Files
 | File | What it does |
