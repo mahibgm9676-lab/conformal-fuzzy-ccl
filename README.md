@@ -68,8 +68,8 @@ The gate results in the paper come from `ua_gate.py`, run through `UA_FCCL_exact
 ### Which results file feeds which table
 
 - Table 3 and Supplementary Table S7 (gate): `gate2_<dataset>.csv` for the controlled gate, and the singleton-gate rows of `final_gate_<dataset>.csv`. The other rows of `final_gate_<dataset>.csv` come from the first version of the gate and are not used.
-- Supplementary Table S9 (lambda and p): `sens_<dataset>.csv`.
-- Supplementary Table S10 (100 splits): `rare100_<dataset>.csv`.
+- Supplementary Table S9 (lambda and p): `sens_<dataset>.csv`, 20 splits for every dataset, including Page Blocks.
+- Supplementary Table S10 (100 splits): `rare100_<dataset>.csv`. The intervals in the table are exact (Clopper-Pearson) intervals on the pooled rarest-class counts. The bootstrap intervals in `rare100_summary.csv` are not used in the paper.
 - Supplementary Table S11 (lattice): `lattice_summary.csv`.
 - The concept counts of the ConExp figures: `concept_counts.csv`. ConExp counts the bottom concept, so its counts are one higher than `n_concepts` in `lattice_summary.csv`.
 
