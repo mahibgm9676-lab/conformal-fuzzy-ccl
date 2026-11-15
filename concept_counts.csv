@@ -1,0 +1,13 @@
+dataset,theta,object_groups,attributes,concepts_full,concepts_clarified
+ecoli,0.3,18,7,25,25
+ecoli,0.5,18,7,25,25
+ecoli,0.7,19,7,21,21
+wilt,0.3,10,5,10,10
+wilt,0.5,7,5,7,7
+wilt,0.7,4,5,4,4
+yeast,0.3,42,8,80,80
+yeast,0.5,32,8,33,33
+yeast,0.7,17,8,17,17
+htru2,0.3,36,8,49,49
+htru2,0.5,31,8,32,32
+htru2,0.7,23,8,23,23
