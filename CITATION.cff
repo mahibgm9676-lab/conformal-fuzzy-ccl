@@ -1,9 +1,9 @@
 cff-version: 1.2.0
 message: "If you use this code or these results, please cite them as below."
 title: "Code and results for: Conformal answer sets and explanation fidelity for fuzzy concept-cognitive learning"
-version: 2.0.0
-date-released: 2026-11-15
-doi: 10.5281/zenodo.24253642
+version: 2.0.1
+date-released: 2026-11-16
+doi: 10.5281/zenodo.24279487
 authors:
   - family-names: Thathappagaari
     given-names: Uma Maherswari
