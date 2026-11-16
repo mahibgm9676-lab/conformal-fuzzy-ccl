@@ -72,7 +72,6 @@ The gate results in the paper come from `ua_gate.py`, run through `UA_FCCL_exact
 - Supplementary Table S9 (lambda and p): `sens_<dataset>.csv`, 20 splits for every dataset, including Page Blocks.
 - Supplementary Table S11 (lattice): agreement values from `lattice_summary.csv`; concept counts from `concept_counts_all.csv`. The counts are from split 0 and include the bottom concept, as ConExp does.
 - The concept counts of the two ConExp figures (Supplementary Figs. S1 and S2): `concept_counts.csv` and `concept_counts_all.csv`.
-- The concept counts of the ConExp figures: `concept_counts.csv`. ConExp counts the bottom concept, so its counts are one higher than `n_concepts` in `lattice_summary.csv`.
 
 ## Licence
 MIT
