@@ -18,6 +18,7 @@ All files are in the main folder of the repository.
 | `sens.py` | Sensitivity to the distance weight and the fuzziness parameter |
 | `extra.py` | 100-split check and the concept-lattice test |
 | `cxt_export.py` | Writes the formal contexts (.cxt files) that ConExp opens |
+| `lattice_count.py` | Counts the formal concepts of the thresholded contexts (same counts as ConExp, bottom concept included) |
 | `01_prepare_data.py` | Downloads the public UCI datasets into `data/` |
 | `02_run_part_a.py` | Conformal answer sets (alpha 0.05, 0.10, 0.20) and singleton gates, 20 splits |
 | `03_run_part_b.py` | Forest and three networks, pooled and class-by-class sets, attribute-level fidelity, 10 splits |
@@ -26,7 +27,7 @@ All files are in the main folder of the repository.
 | `UA_FCCL_final.ipynb`, `UA_FCCL_extra_runs.ipynb` | Colab notebooks for step 5 on all nine datasets, and steps 2 and 3 for Shuttle, Yeast and Ecoli |
 | `UA_FCCL_exact_gate.ipynb`, `UA_FCCL_sensitivity.ipynb`, `UA_FCCL_extra_checks.ipynb`, `UA_FCCL_conexp.ipynb` | Colab notebooks for the gate in the paper and the added checks (see below) |
 | `final_*.csv` | Result files of steps 2 to 5 (`final_A_*`, `final_B*`, `final_splits_*`, `final_classes_*`, `final_gate_*`, `final_tableA_rare_classes.csv`) |
-| `gate2_*.csv`, `sim_gate_results.csv`, `sens_*.csv`, `rare100_*.csv`, `lattice_*.csv`, `concept_counts.csv`, `*.cxt` | Result files of the added checks (see below) |
+| `gate2_*.csv`, `sim_gate_results.csv`, `sens_*.csv`, `rare100_*.csv`, `lattice_*.csv`, `concept_counts.csv`, `concept_counts_all.csv`, `*.cxt` | Result files of the added checks (see below) |
 | `Fig1_*`, `Fig2_*`, `Fig3_*` | Figures 1 to 3 (png, pdf, eps, tiff) |
 
 ## Data
@@ -63,13 +64,14 @@ The gate results in the paper come from `ua_gate.py`, run through `UA_FCCL_exact
 | `UA_FCCL_sensitivity.ipynb` | Changes lambda (0.25, 0.5, 0.75) and p (1.5, 2, 3) | `sens_<dataset>.csv`, `sens_summary.csv` |
 | `UA_FCCL_extra_checks.ipynb` | 100 splits for Shuttle, Yeast and Ecoli; concept-lattice test | `rare100_*.csv`, `lattice_*.csv` |
 | `UA_FCCL_conexp.ipynb` | Writes the contexts that ConExp opens | `*.cxt`, `concept_counts.csv` |
+| `UA_FCCL_lattice_counts.ipynb` | Writes the contexts for all nine datasets at θ = 0.3, 0.5 and 0.7 and counts their concepts | `*.cxt`, `concept_counts_all.csv` |
 
 ### Which results file feeds which table
 
 - Table 3 and Supplementary Table S7 (gate): `gate2_<dataset>.csv` for the controlled gate, and the singleton-gate rows of `final_gate_<dataset>.csv`. The other rows of `final_gate_<dataset>.csv` come from the first version of the gate and are not used.
 - Supplementary Table S9 (lambda and p): `sens_<dataset>.csv`, 20 splits for every dataset, including Page Blocks.
-- Supplementary Table S10 (100 splits): `rare100_<dataset>.csv`. The intervals in the table are exact (Clopper-Pearson) intervals on the pooled rarest-class counts. The bootstrap intervals in `rare100_summary.csv` are not used in the paper.
-- Supplementary Table S11 (lattice): `lattice_summary.csv`.
+- Supplementary Table S11 (lattice): agreement values from `lattice_summary.csv`; concept counts from `concept_counts_all.csv`. The counts are from split 0 and include the bottom concept, as ConExp does.
+- The concept counts of the two ConExp figures (Supplementary Figs. S1 and S2): `concept_counts.csv` and `concept_counts_all.csv`.
 - The concept counts of the ConExp figures: `concept_counts.csv`. ConExp counts the bottom concept, so its counts are one higher than `n_concepts` in `lattice_summary.csv`.
 
 ## Licence
